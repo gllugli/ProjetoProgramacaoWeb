@@ -1,14 +1,11 @@
 PRAGMA foreign_keys = ON;
 
--- (BEGIN TRANSACTION) Serve para que, caso tenha algum erro no meio do caminho, nada seja inserido na tabela parcialmente
-BEGIN TRANSACTION; 
-
 CREATE TABLE IF NOT EXISTS  usuario (
     id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     telefone CHAR(15) UNIQUE NOT NULL,
     instituicao TEXT NOT NULL,
-    email TEXT UNIQUE,
+    email TEXT UNIQUE NOT NULL,
     senha CHAR(30) NOT NULL,
     perfil TEXT DEFAULT 'aluno'
 );
@@ -37,8 +34,6 @@ CREATE TABLE IF NOT EXISTS inscricao (
     UNIQUE (id_usuario_fk, id_evento_fk)
 );
 
---id_inscricao (PK), id_usuario (FK), id_evento (FK), data_inscricao
-
 CREATE TABLE IF NOT EXISTS certificado (
     id_certificado INTEGER PRIMARY KEY AUTOINCREMENT,
     data_emissao DATE NOT NULL,
@@ -48,8 +43,6 @@ CREATE TABLE IF NOT EXISTS certificado (
     FOREIGN KEY (id_usuario_fk) REFERENCES usuario (id_usuario),
     FOREIGN KEY (id_evento_fk) REFERENCES evento (id_evento)
 );
-
-COMMIT;
 
 -- Script de criação e população do banco de dados SGEA
 
