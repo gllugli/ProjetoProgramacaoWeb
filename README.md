@@ -1,5 +1,5 @@
 # Sistema de Gestão de Eventos Acadêmicos (SGEA)
-## (Projeto ainda em desenvolvimento)
+(Projeto ainda em desenvolvimento)
 
 O Sistema de Gestão de Eventos Acadêmicos (SGEA) é um sistema web desenvolvido em Django com o objetivo de gerenciar eventos acadêmicos, como seminários, palestras, minicursos e semanas acadêmicas.  
 Este projeto foi desenvolvido como parte da disciplina **Programação Web**, com foco em backend e modelagem de dados.
