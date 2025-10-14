@@ -1,0 +1,41 @@
+:root {
+  --ceub-roxo-escuro: #43054e;
+  --ceub-roxo: #662c92;
+  --ceub-lilas: #bf0087;
+  --ceub-magenta: #ec0089;
+  --ceub-amarelo: #fde100;
+
+  /* cores neutras para textos/fundos */
+  --cor-texto-principal: #333333;
+  --cor-fundo-claro: #f7f7f7;
+  --cor-branco: #ffffff;
+}
+
+body {
+  background-color: var(--cor-branco);
+  color: var(--cor-texto-principal);
+}
+
+.header {
+  background-color: var(--ceub-roxo-escuro);
+  color: var(--cor-branco);
+}
+
+button {
+  background-color: var(--ceub-roxo);
+  color: var(--cor-branco);
+}
+
+.btn-primario {
+  background: var(--ceub-roxo);
+}
+
+.btn-secundario {
+  background: var(--ceub-lilas);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

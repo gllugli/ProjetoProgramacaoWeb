@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+        <h1 class="texto">Central de Eventos</h1>
+        <img src="{% static 'img/logo_ceub.png' %}" alt="Logo UniCEUB">
+        </div>
+    </header>
+    <main>
+        <div class="caixa-login">
+            <h2>Acesse sua conta</h2>
+
+            <form action="">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+            </form>
+
+            <a href="#">Esqueceu sua senha?</a>
+        </div>
+        
+        <p class="cadastro-link">
+            Não tem uma conta? <a href="#">Cadastre-se</a>
+        </p>
+
+    </main>
+</body>
+</html>
