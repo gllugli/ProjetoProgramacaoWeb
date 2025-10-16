@@ -47,27 +47,29 @@ CREATE TABLE IF NOT EXISTS certificado (
 -- Script de criação e população do banco de dados SGEA
 
 -- Usuários
-INSERT INTO usuario (nome, telefone, instituicao, email, senha, perfil)
+INSERT OR IGNORE INTO cadastro_eventos_ceub_usuario (nome, telefone, instituicao, email, senha, perfil)
 VALUES
-('João Silva', '61999999999', 'Universidade de Brasília', 'joao@unb.br', '12345', 'organizador'),
-('Maria Oliveira', '61988888888', 'IFB', 'maria@ifb.edu.br', 'abcde', 'aluno'),
-('Carlos Pereira', '61977777777', 'Uniceub', 'carlos@uniceub.br', 'senha', 'aluno');
+('Prof Felippe Pires', '61999999999', 'CEUB', 'prof.felippe.adm@ceub.edu', '12345', 'organizador'),
+('Gabriel Lugli', '61988888888', 'CEUB', 'gabriel.lugli@sempreceub.com', 'abcde', 'aluno'),
+('Pedro Augusto', '61977777777', 'CEUB', 'pedro.augusto@sempreceub.com', 'senha', 'aluno'),
+('Gustavo Vieira', '61977777777', 'CEUB', 'gustavo.vieira@sempreceub.com', 'senha', 'aluno'),
+('Arthur', '61977777777', 'CEUB', 'arthur@sempreceub.com', 'senha', 'aluno');
 
 -- Eventos
-INSERT INTO evento (tipo, nome_evento, descricao, data_inicio, data_fim, horario, local_evento, qtd_participantes, id_organizador_fk)
+INSERT OR IGNORE INTO cadastro_eventos_ceub_evento (tipo, nome_evento, descricao, data_inicio, data_fim, horario, local_evento, qtd_participantes, id_organizador_fk_id)
 VALUES
-('Palestra', 'Inteligência Artificial no Cotidiano', 'Discussão sobre IA aplicada à educação', '2025-10-15', '2025-10-15', '14:00', 'Auditório Central', 100, 1),
+('Palestra', 'Ciência de Dados Aplicada à Gestão e à Saúde', '', '2025-10-9', '2025-10-9', '11:00', 'Auditório do Bloco 2', 0, 1),
 ('Minicurso', 'Introdução ao Django', 'Curso prático de criação de aplicações web com Python e Django', '2025-10-20', '2025-10-21', '09:00', 'Laboratório 2', 25, 1);
 
 -- Inscrições
-INSERT INTO inscricao (data_inscricao, id_usuario_fk, id_evento_fk)
+INSERT OR IGNORE INTO cadastro_eventos_ceub_inscricao (data_inscricao, id_usuario_fk_id, id_evento_fk_id)
 VALUES
 ('2025-10-10', 2, 1),
 ('2025-10-11', 3, 1),
 ('2025-10-12', 2, 2);
 
 -- Certificados
-INSERT INTO certificado (data_emissao, codigo_validacao, id_usuario_fk, id_evento_fk)
+INSERT OR IGNORE INTO cadastro_eventos_ceub_certificado (data_emissao, codigo_validacao, id_usuario_fk_id, id_evento_fk_id)
 VALUES
 ('2025-10-16', 'ABC123XYZ', 2, 1),
 ('2025-10-17', 'DEF456UVW', 3, 1);
